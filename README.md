@@ -1,7 +1,14 @@
 # Basic_Compressor
 Magnitude Pruning + Post-Training Quantization with ONNX For CNN
-More detail information pruning can get from (https://github.com/bok3948/Basic_Pruning) 
-More detail infromation about quantization can get from (https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html)
+
+More detail information about pruning can be found here: [Basic Pruning](https://github.com/bok3948/Basic_Pruning)
+
+More detail information about quantization can be found here: [ONNX Quantization](https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html)
+
+Original models, which are not compressed, can be downloaded from the following links:
+- ResNet-18: [Download](https://drive.google.com/file/d/1iR6WdiGQ1ceWspa_jppUvklgK39k13NH/view?usp=sharing)
+- ResNet-34: [Download](https://drive.google.com/file/d/1_eipZl72oBA0vBYIVwNoX1IZj5HHWk_U/view?usp=sharing)
+- ResNet-50: [Download](https://drive.google.com/file/d/12UjAI5H0haUCt-JBoQO77ADMfTbdIfGh/view?usp=sharing)
 
 # Model Compression Summary
 
@@ -30,3 +37,16 @@ More detail infromation about quantization can get from (https://onnxruntime.ai/
 | Torch ResNet50 Original     | 87.27              | 99.26              | 13.4592      | 94.41           |
 
 
+## Run
+Firstly, Run pruning
+
+<pre>
+python ./pruner/main.py --dataset CIFAR10 --data_path "path_to_data" --pretrained "path_to_pretrained_model" --device cuda --model resnet18 --pruning_ratio 0.7 --per_iter_pruning_ratio 0.05 --min_ratio 0.01
+</pre>
+
+Secondly, Run ONNX PTQ
+get pruned_model from running 1st step and put it's path on the --pruned_pretrained and for benchmarking put original(not compressed model) model path to --ori_pretrained 
+
+<pre>
+python ONNX_PTQ.py --model resnet18 --pruned_pretrained ./res18_pruned_checkpoint.pth --ori_pretrained ./pruning/res18_best_checkpoint.pth  
+</pre>
