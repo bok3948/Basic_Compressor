@@ -36,6 +36,9 @@ Original models, which are not compressed, can be downloaded from the following 
 | Torch ResNet50 Pruned       | 85.68              | 99.22              | 7.5003       | 25.48           |
 | Torch ResNet50 Original     | 87.27              | 99.26              | 13.4592      | 94.41           |
 
+## Requirements
+- **PyTorch**: 2.2.1
+- **timm**: 0.9.12
 
 ## Execution Instructions
 
