@@ -39,6 +39,8 @@ Original models, which are not compressed, can be downloaded from the following 
 ## Requirements
 - **PyTorch**: 2.2.1
 - **timm**: 0.9.12
+- **ONNX**: 1.16.0
+- **ONNX Runtime**: 1.17.1
 
 ## Execution Instructions
 
