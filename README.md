@@ -1,5 +1,7 @@
 # Basic_Compressor
 Magnitude Pruning + Post-Training Quantization with ONNX For CNN
+More detail information pruning can get from (https://github.com/bok3948/Basic_Pruning) 
+More detail infromation about quantization can get from (https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html)
 
 # Model Compression Summary
 
