@@ -37,15 +37,17 @@ Original models, which are not compressed, can be downloaded from the following 
 | Torch ResNet50 Original     | 87.27              | 99.26              | 13.4592      | 94.41           |
 
 
-## Run
-Firstly, Run pruning
+## Execution Instructions
+
+### Step 1: Pruning
+First, run pruning:
 
 <pre>
 python ./pruner/main.py --dataset CIFAR10 --data_path "path_to_data" --pretrained "path_to_pretrained_model" --device cuda --model resnet18 --pruning_ratio 0.7 --per_iter_pruning_ratio 0.05 --min_ratio 0.01
 </pre>
 
-Secondly, Run ONNX PTQ
-get pruned_model from running 1st step and put it's path on the --pruned_pretrained and for benchmarking put original(not compressed model) model path to --ori_pretrained 
+### Step 2: ONNX Post-Training Quantization
+After pruning, quantize the model using ONNX PTQ. Use the path to the pruned model for --pruned_pretrained and for benchmarking, use the original model path for --ori_pretrained:
 
 <pre>
 python ONNX_PTQ.py --model resnet18 --pruned_pretrained ./res18_pruned_checkpoint.pth --ori_pretrained ./pruning/res18_best_checkpoint.pth  
