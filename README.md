@@ -5,7 +5,7 @@ More detail infromation about quantization can get from (https://onnxruntime.ai/
 
 # Model Compression Summary
 
-## ResNet-34 Comparison
+## ResNet-34 Result
 
 | Model Name                  | Top-1 Accuracy (%) | Top-5 Accuracy (%) | Latency (ms) | Model Size (MB) |
 |-----------------------------|--------------------|--------------------|--------------|-----------------|
@@ -13,7 +13,7 @@ More detail infromation about quantization can get from (https://onnxruntime.ai/
 | Torch ResNet34 Pruned       | 86.52              | 98.95              | 7.047        | 22.73           |
 | Torch ResNet34 Original     | 86.66              | 99.25              | 11.4254      | 85.29           |
 
-## ResNet-18 Comparison
+## ResNet-18 Result
 
 | Model Name                  | Top-1 Accuracy (%) | Top-5 Accuracy (%) | Latency (ms) | Model Size (MB) |
 |-----------------------------|--------------------|--------------------|--------------|-----------------|
@@ -21,7 +21,7 @@ More detail infromation about quantization can get from (https://onnxruntime.ai/
 | Torch ResNet18 Pruned       | 85.98              | 99.24              | 3.8252       | 12.07           |
 | Torch ResNet18 Original     | 86.42              | 99.16              | 5.5561       | 44.8            |
 
-## ResNet-50 Comparison
+## ResNet-50 Result
 
 | Model Name                  | Top-1 Accuracy (%) | Top-5 Accuracy (%) | Latency (ms) | Model Size (MB) |
 |-----------------------------|--------------------|--------------------|--------------|-----------------|
